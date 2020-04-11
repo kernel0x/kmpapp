@@ -1,0 +1,5 @@
+enableFeaturePreview('GRADLE_METADATA')
+
+rootProject.name = 'KmpProject'
+
+include ':AndroidApp', ':SharedCode'

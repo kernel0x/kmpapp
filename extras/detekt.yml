@@ -1,0 +1,21 @@
+autoCorrect: true
+
+build:
+  warningThreshold: 5
+  failThreshold: 10
+  weights:
+    complexity: 2
+    formatting: 0
+    LongParameterList: 1
+    comments: 0.5
+
+style:
+  active: true
+  WildcardImport:
+    active: true
+  MaxLineLength:
+    active: true
+    maxLineLength: 120
+    excludePackageStatements: true
+    excludeImportStatements: true
+    excludeCommentStatements: true

@@ -1,0 +1,44 @@
+buildscript {
+    ext.kotlin_version = '1.3.50'
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+        maven { url "https://dl.bintray.com/kodein-framework/Kodein-DI/org/kodein/di/" }
+        maven { url 'https://plugins.gradle.org/m2/' }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.kotlin:kotlin-serialization:$kotlin_version"
+        classpath "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.0.1"
+        classpath "org.jlleitschuh.gradle:ktlint-gradle:9.1.1"
+        classpath "com.vanniktech:gradle-android-junit-jacoco-plugin:0.16.0"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url = uri("https://dl.bintray.com/icerockdev/moko") }
+        maven { url "https://dl.bintray.com/florent37/maven" }
+        maven { url "https://dl.bintray.com/kodein-framework/Kodein-DI" }
+    }
+}
+
+ext {
+    coroutine_version = "1.3.2"
+    serializer_version = "0.13.0"
+    ktor_version = "1.2.5"
+
+    kodein_version = "6.4.1"
+    moko_mvvm_version = "0.3.1"
+    mockk_version = "1.9.3"
+}
+
+apply from: "extras/install-git-hooks.gradle"
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
