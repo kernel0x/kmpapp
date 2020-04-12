@@ -1,6 +1,10 @@
 # Kotlin Mobile Multiplatform App (Android & iOS)
 
-One code to rule all. Application example using Kotlin Multiplatform and MVVM pattern for both platforms. Is used:
+One code to rule all. Application example using Kotlin Multiplatform and MVVM pattern for both platforms. 
+
+<img src="https://github.com/kernel0x/kmpapp/blob/master/images/architecture.svg">
+
+Is used:
 - layered clean architecture
 - DI (Kodein)
 - coroutines
