@@ -112,7 +112,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 }
 ```
 
-### Presentation Layer (Shared Code)
+### Presentation Layer - ViewModels (Shared Code)
 
 This layer is shared by Android and iOS, and this is developed on Kotlin. Here is where we have to call the different use-cases of the domain layer. To make the call async we are using kotlin coroutines and flow.
 
@@ -142,7 +142,7 @@ class IndexesViewModel : BaseViewModel() {
 }
 ```
 
-### Domain Layer — Model & UseCases (Shared Code)
+### Domain Layer — Models & UseCases (Shared Code)
 
 In this layer, we defining the models and all the use cases that we need for our application.
 
