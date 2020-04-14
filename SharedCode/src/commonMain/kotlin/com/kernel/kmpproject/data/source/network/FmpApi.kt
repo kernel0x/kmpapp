@@ -10,12 +10,14 @@ import io.ktor.client.features.logging.Logger
 import io.ktor.client.features.logging.Logging
 import io.ktor.client.request.get
 import io.ktor.http.userAgent
+import kotlinx.serialization.UnstableDefault
 import kotlinx.serialization.internal.ArrayListSerializer
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonConfiguration
 
 private const val BASE_URL = "https://financialmodelingprep.com/api/v3"
 
+@UseExperimental(UnstableDefault::class)
 class FmpApi {
 
   private val client: HttpClient by lazy {
@@ -30,13 +32,13 @@ class FmpApi {
   suspend fun getMajorsIndexes(): MajorIndexesListEntity = client.get<String>("$BASE_URL/majors-indexes") {
     userAgent(platformName())
   }.let {
-    Json(JsonConfiguration(strictMode = false)).parse(MajorIndexesListEntity.serializer(), it)
+    Json(JsonConfiguration()).parse(MajorIndexesListEntity.serializer(), it)
   }
 
   suspend fun getQuotes(symbol: String): List<QuoteEntity> =
     client.get<String>("$BASE_URL/quote/$symbol") {
       userAgent(platformName())
     }.let {
-      Json(JsonConfiguration(strictMode = false)).parse(ArrayListSerializer(QuoteEntity.serializer()), it)
+      Json(JsonConfiguration()).parse(ArrayListSerializer(QuoteEntity.serializer()), it)
     }
 }

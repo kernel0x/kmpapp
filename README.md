@@ -1,6 +1,6 @@
 # Kotlin Mobile Multiplatform App (Android & iOS)
 
-One code to rule all. Application example using Kotlin Multiplatform and MVVM pattern for both platforms. 
+One Code To Rule Them All. Application example using Kotlin Multiplatform and MVVM pattern for both platforms. 
 
 <img src="https://github.com/kernel0x/kmpapp/blob/master/images/architecture.svg">
 
@@ -155,7 +155,7 @@ For networking we are using Ktor and for JSON deserialisation Kotlinx serializat
 ### Running unit tests
 
 - Android test: ./gradlew testDebugUnitTest
-- Common test on iOS (need run Simulator iPhone 8): ./gradlew iosTest
+- Common test on iOS (need run Simulator iPhone 8): ./gradlew iosUnitTest
 
 ### Running the app
 
